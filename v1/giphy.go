@@ -96,9 +96,11 @@ type Giph struct {
 	EmbedURL    string `json:"embed_url,omitempty"`
 	Owner       string `json:"username,omitempty"`
 	Source      string `json:"source,omitempty"`
+	Title       string `json:"title,omitempty"`
 	Rating      string `json:"rating,omitempty"`
 	Caption     string `json:"caption,omitempty"`
 	ContentURL  string `json:"content_url,omitempty"`
+	AltText     string `json:"alt_text,omitempty"`
 
 	SourceTopLevelDomain string `json:"source_tld,omitempty"`
 	SourcePostURL        string `json:"source_post_url,omitempty"`
@@ -140,7 +142,9 @@ type Giph struct {
 }
 
 // GiphyTime sends time back in the format:
-//    2015-08-22 15:23:22 and that trips out the default
+//
+//	2015-08-22 15:23:22 and that trips out the default
+//
 // JSON unmarshaling, so make a custom unmarshaling.
 type GiphyTime time.Time
 
